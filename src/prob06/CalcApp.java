@@ -1,3 +1,5 @@
+
+
 package prob06;
 
 import java.util.Scanner;
@@ -12,6 +14,45 @@ public class CalcApp {
 			System.out.print( ">> " );
 			String expression = scanner.nextLine();
 			
+			String[] tokens = expression.split("");
+			int lvalue = Integer.parseInt(tokens[0]);
+			int rvalue = Integer.parseInt(tokens[2]);
+			
+			
+			switch (tokens[1]) {
+			case "+" : {
+				Add add = new Add();
+				add.setValue(lvalue, rvalue);
+				int result = add.calculate();
+				System.out.println(">>");
+			}
+			case "-" : {
+				Sub sub = new Sub();
+				sub.setValue(lvalue, rvalue);
+				int result = sub.calculate();
+				System.out.println(">>");	
+			}
+			case "*" : {
+				Mul mul = new Mul();
+				mul.setValue(lvalue, rvalue);
+				int result = mul.calculate();
+				System.out.println(">>");
+				}
+			case "/" : {
+				Div div = new Div();
+				div.setValue(lvalue, rvalue);
+				int result = div.calculate();
+				System.out.println(">>");
+				}
+				
+				
+				
+			}
+			
+			
+			
+			
+			}
 			if( "quit".equals( expression ) ) {
 				break;
 			}
@@ -33,7 +74,6 @@ public class CalcApp {
 		}
 		
 		scanner.close();
+		
+			}
 
-	}
-
-}
