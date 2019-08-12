@@ -12,7 +12,6 @@ public class CalcApp {
 		Scanner scanner = new Scanner(System.in);
 
 		while( true ) {
-
 			System.out.print( ">> " );
 			String expression = scanner.nextLine();
 			
